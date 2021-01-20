@@ -18,6 +18,7 @@ class Scraper
   def make_courses
     self.get_courses.collect do |element|
       course = Course.new
+      binding.pry
       course.title = element.css("h2").text
       course.schedule = element.css(".date").text
       course.description = element.css("p").text
